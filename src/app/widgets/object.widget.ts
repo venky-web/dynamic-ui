@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, Input, NgModule, ViewChild, ViewCon
         <div class="section-header" *ngIf="header">
             <span>{{header | titlecase}}</span>
         </div>
-        <div class="p-5 p-l-10">
+        <div class="p-2 pl-4">
             <ng-container #container></ng-container>
         </div>
     `,

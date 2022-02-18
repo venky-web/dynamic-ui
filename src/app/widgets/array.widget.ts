@@ -5,7 +5,7 @@ import { ChangeDetectionStrategy, Component, Input, NgModule, ViewChild, ViewCon
 @Component({
     selector: 'array-widget',
     template: `
-        <div class="border m-b-12">
+        <div class="border rounded rounded-lg mb-3">
             <ng-container #container></ng-container>
         </div>
     `,

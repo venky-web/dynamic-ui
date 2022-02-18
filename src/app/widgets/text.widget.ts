@@ -5,8 +5,8 @@ import { ChangeDetectionStrategy, Component, Input, NgModule, ViewChild, ViewCon
 @Component({
     selector: 'text-widget',
     template: `
-        <div class="key-value">
-            <span *ngIf="key" class="key" [innerHTML]="key"></span>
+        <div class="key-value p-1">
+            <span *ngIf="key" class="key" innerHTML="{{key | titlecase}}"></span>
             <span *ngIf="value" [innerHTML]="value"></span>
         </div>
         <ng-container #container></ng-container>
