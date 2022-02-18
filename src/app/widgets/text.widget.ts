@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, Input, NgModule, ViewChild, ViewCon
     selector: 'text-widget',
     template: `
         <div class="key-value p-1">
-            <span *ngIf="key" class="key" innerHTML="{{key | titlecase}}"></span>
+            <span *ngIf="_key" class="key" innerHTML="{{_key | titlecase}}"></span>
             <span *ngIf="value" [innerHTML]="value"></span>
         </div>
         <ng-container #container></ng-container>
@@ -15,11 +15,18 @@ import { ChangeDetectionStrategy, Component, Input, NgModule, ViewChild, ViewCon
 })
 export class TextWidget {
 
-    @Input() key: string = "";
+    @Input() set key(value: string) {
+        this._key = value;
+        if (this._key) {
+            this._key = this._key.replace(/([a-z0-9])([A-Z])/g, '$1 $2');
+        }
+    };
     @Input() value: string = "";
 
     @ViewChild("container", { read: ViewContainerRef, static: true })
     embeddedContainer!: ViewContainerRef;
+
+    _key: string | undefined;
 
     constructor() {}
 
