@@ -8,3 +8,6 @@ export { ObjectWidgetModule } from "./object.widget";
 
 export { TextWidget } from "./text.widget";
 export { TextWidgetModule } from "./text.widget";
+
+export { TableWidget } from "./table.widget";
+export { TableWidgetModule } from "./table.widget";
